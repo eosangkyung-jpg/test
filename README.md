@@ -1,24 +1,46 @@
-#깃허브 처음 사용해보기
+# 클래스로 (Classro) 웹사이트
 
-git init
+동네 공방·작업실의 **원데이 클래스**(도자기, 베이킹, 가죽공예, 플라워, 드로잉, 향수)를 찾고 바로 예약·결제하는 서비스, 클래스로의 소개 웹사이트입니다.
 
-git add README.md
-git add . (모든 파일 보낼 때)
+> 수업용 가상 회사입니다. 등장하는 회사·인물·수치는 모두 지어낸 것입니다. 자세한 설정은 [`00_회사소개.md`](00_회사소개.md)를 참고하세요.
 
-git commit -m "first commit" (내용 수정하고 add 마친 상태에서 수정 포인트 설정)
+## 실행 방법
 
+별도 설치나 빌드가 필요 없습니다. `index.html`을 브라우저로 열면 됩니다.
 
-git add README.md
-git commit -m "second commit"
+## 폴더 구조
 
-git branch -M main (메인 브랜치 만들기, 한번만)
-git push -u origin main (여러번 사용 가능)
+```
+.
+├── index.html          # 메인 페이지
+├── css/
+│   └── style.css       # 스타일 (반응형 포함)
+├── js/
+│   └── main.js         # 클래스 목록·검색·필터, 모바일 메뉴, 애니메이션
+├── 00_회사소개.md       # 회사 설정 자료
+└── README.md
+```
 
+## 페이지 구성
 
-git remote add origin https://github.com/eosangkyung-jpg/test.git  (한번만)
+| 섹션 | 내용 |
+| --- | --- |
+| 헤더 | 상단 고정 메뉴, 모바일 햄버거 메뉴 |
+| 히어로 | 소개 문구, 클래스 검색창, 카테고리 타일 |
+| 숫자 소개 | 제휴 공방 420곳, 월 예약 7천 건 등 (카운트 애니메이션) |
+| 클래스 | 카테고리 필터 + 검색이 되는 예시 클래스 카드 |
+| 이용 방법 | 탐색 → 상세 → 날짜·인원 선택 → 결제 4단계 |
+| 회사 소개 | 설립일, 대표, 서비스, 제휴 공방 현황, 팀 구성 |
+| 소식 | 앱 v2.3.0 업데이트 등 |
+| 입점 문의 · 푸터 | 공방 입점 안내, 회사 정보 |
 
+## 사용 기술
 
-git push -u origin main
+- HTML / CSS / JavaScript (프레임워크 없음)
+- 폰트: [Pretendard](https://github.com/orioncactus/pretendard) (CDN)
 
+## 참고
 
-깃 연습하는 중 
+- 클래스 카드 데이터는 `js/main.js`의 `CLASSES` 배열에 있는 예시 데이터입니다. 이 배열을 수정하면 목록이 바뀝니다.
+- "예약하기" 버튼은 실제 예약 기능 없이 안내 메시지만 띄웁니다.
+- 입점 문의 메일 주소(`partner@classro.example`)는 예시 주소입니다.
